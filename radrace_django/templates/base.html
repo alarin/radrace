@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	{% load media %}
+	<link rel="stylesheet" href="{% media "css/reset.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% media "css/base.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% media "css/print.css" %}" type="text/css" media="print" />
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="{% media "css/base_ie.css" %}" /><![endif]-->
+	<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="{% media "css/base_ie6.css" %}" /><![endif]-->
+
+	<script type="text/javascript" src="{% media "js/jquery.js" %}"></script>
+	<script type="text/javascript" src="{% media "js/base.js" %}"></script>
+
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	{% block extrastyle %}{% endblock %}
+	{% block extrahead %}{% endblock %}
+
+	<title>{%block title %}{% endblock %}</title>
+</head>
+<body>
+{% block body %}{% endblock %}
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("");
+pageTracker._trackPageview();
+</script>
+</body>
+</html>
