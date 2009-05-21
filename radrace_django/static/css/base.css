@@ -1,0 +1,283 @@
+/**************************** Table of Contents ********************************
+/*	1. General tags
+/*	2. Layout
+/* 		2.1 Header
+/*		2.3 Content
+/*			2.3.1 Forms
+/*			2.3.2 Login
+/*	3. Footer
+/*  4. Profile
+/******************************************************************************/
+
+/*
+  COMON COLORS
+
+  COMMON FONTS
+
+  H1 - site header
+  H2 - page header
+  H3,4,5,6 - content headers
+
+*/
+
+/*	1. General tags	*/
+html, body {
+	height: 100%;
+	font-size: 100%;
+}
+
+body{
+    min-width: 800px;
+}
+
+a {
+}
+a:hover {
+}
+
+.pseudo {
+	text-decoration: none;
+	border-bottom: 1px dashed #7d0d00;
+}
+
+.pseudo:hover {
+	text-decoration: none;
+	border-bottom: 1px solid #7d0d00;
+    cursor: pointer;
+}
+
+h1,h2,h3,h4,h5,h6 {
+}
+
+h1 {
+	font-size: 200%;
+}
+h2 {
+	font-size: 180%;
+}
+h3 {
+	font-size: 155%;
+}
+h4 {
+	font-size: 135%;
+}
+h5 {
+	font-size: 115%;
+}
+h6 {
+	font-size: 100%;
+}
+
+strong { font-weight: bold; }
+
+span.nobr {
+	white-space: nowrap;
+}
+
+ul.dashed {
+	list-style-type: none;
+    //list-style-image: url('li.gif');
+}
+ul.dashed li {
+	padding: 0;
+    behavior: expression(
+       ( !this.before && parentNode && parentNode.tagName == 'UL' )
+       ?
+           ( this.before = true )
+            & ( parentNode.style.listStyleImage = 'none' )
+            & (
+               ( this.firstChild && this.firstChild.firstChild )
+               ?
+                    ( this.firstChild.style.marginTop = '-1.2em' )
+                    & ( this.firstChild.style.position = 'relative' )
+                : ''
+            )
+           & ( eNOBR = document.createElement( '<nobr style="position: relative; display: block; width: 1.25em; left: -1.25em; margin: 0 -1.25em -1.2em 0;" />' ) )
+           & ( eNOBR.innerHTML = '&mdash;&nbsp;' )
+           & ( this.insertBefore( eNOBR, this.firstChild ) )
+       : ''
+    );
+}
+ul.dashed>li:before {
+	content: '\2014\a0';
+    float: left;
+    margin-left: -1.25em;
+}
+ul.dashed>li>*:first-child:-moz-first-node {
+       margin-top: -1.2em;
+}
+ul.dashed>li>* {
+	text-indent: 0;
+}
+
+/* file types */
+.fileicon { background: transparent url(/imgs/files/generic.png) no-repeat scroll 0 50%; }
+.fileicon.generic {}
+.fileicon.application-msword { background-image: url(/imgs/files/application-msword.png); }
+.fileicon.application-vnd.ms-excel { background-image: url(/imgs/files/application-vnd.ms-excel.png); }
+.fileicon.image-jpeg { background-image: url(/imgs/files/image-jpeg.png); }
+.fileicon.image-gif { background-image: url(/imgs/files/image-gif.png); }
+.fileicon.image-png { background-image: url(/imgs/files/image-png.png); }
+.fileicon.text-html { background-image: url(/imgs/files/text-html.png); }
+
+/* 2. Layout */
+html {
+	padding: 0 5%;
+	background: #EEE;
+	height: 100%;
+}
+#wrapper {
+  background: #FFF;
+  padding: 0 1%;
+	
+  position:relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+
+/* 2.1 Header */
+.loginbox {
+	float: right;
+	padding: 1em;
+	background: #FFFF99;
+}
+#header h1{
+	float:left;
+}
+	#header h1 a.homelink {
+		text-decoration: none;
+	}
+#content{
+	clear: both;
+	overflow: hidden;
+	padding-bottom: 60px;
+}
+/*		2.3.1 Forms */
+form.equal input.text, form.equal textarea, form.equal select {
+	width: 90%;
+}
+form.equal ul.errors {
+	width: 100%;
+}
+
+form.equal60 input.text, form.equal60 textarea, form.equal60 select {
+	width: 30em;
+}
+form.equal60 ul.errors {
+	width: 70%;
+}
+
+.f_row {
+	clear: both;
+	overflow: hidden;
+	margin-bottom: 1em;
+}
+.f_row label {
+	float: left;
+	width: 15em;
+}
+form.label10 .f_row label {
+	width:10em;
+}
+form.label10 .f_input {
+	padding: 0 0 0 11em;
+}
+.f_row label.checkbox {
+	float: none;
+	width: auto;
+}
+.f_input {
+	padding: 0 0 0 16em;
+}
+.f_input_textonly {
+	padding: 0.3em 0 0 16.3em;
+}
+.f_input input.text {
+	margin: 0;
+}
+.f_input input.checkbox {
+	margin-left: 0;
+}
+.f_row select, .f_input select {
+	margin: 0;
+}
+ul.errors {
+	width: 80%;
+	margin: 0 0 0.5em 0;
+	padding: 0.5em 1em;
+	background-color: #fdd;
+	list-style: none;
+}
+	.errors li {}
+div.errors {
+	margin: 0.5em 0;
+	padding: 0.5em 1em;
+	background-color: #fdd;
+}
+	div.errors ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+/*			2.3.2 Login */
+	form.login {
+		padding: 2em 1em;
+		position: absolute;
+		left: 30%;
+		top: 30%;
+		background: #FFFF99;
+	}
+	form.login .invited {
+		color: #B00;
+	}
+	
+/*	3. Footer	*/
+#footer {
+	position: relative;
+	margin-top: -90px;
+	height: 60px;
+	xleft: 5%;
+	bottom: 0;
+	width: 100%;
+}
+	#footerline {
+		width: 100%;
+		height: 2px;
+		margin-top: 40px;
+		background: #ccc;
+		font-size: 1px;
+	}
+	#footertext {
+		width: 95%;
+		height: 40px;
+		margin: 10px 0 0 20px;
+		/*background: url(/imgs/common.png) no-repeat -214px -19px;*/		
+		text-align: right;
+		font-size: 12px;
+		color: gray;
+	}
+		#footertext img {
+			vertical-align: middle;
+		}
+		#footertext a {
+			color: gray;
+		}
+
+/*	4. Profile	*/
+
+ul.comments_list {
+	margin: 1em;
+}
+	ul.comments_list li {
+		margin: 1em;
+	}
+	
+	ul.comments_list li div.comment {
+		margin: 0.2em 2em;
+	}
+
+#js_invite {
+	margin: 1em 0;
+}
+	

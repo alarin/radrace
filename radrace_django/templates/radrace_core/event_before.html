@@ -1,0 +1,23 @@
+{% extends "radrace_core/base_site.html" %}
+{% block content %}
+<h1>{{event.name}}</h1>
+
+<div class="author">
+	<span class="name">{{event.author.first_name}} {{event.author.last_name}}</span>
+	{% if event.author.get_profile.twitter %}
+		<a href="http://twitter.com/{{event.author.get_profile.twitter}}" class="twitter">@{{event.author.get_profile.twitter}}</a>
+	{% endif %}
+
+	{% if event.author.get_profile.website %}
+		<a href="{{event.author.get_profile.website}}" class="website">{{event.author.get_profile.website}}</a>
+	{% endif %}
+</div>
+
+<div class="time">
+{{ event.start_date }}
+</div>
+<div class="place">
+<a href="{{event.place.url}}">{{event.place.name}}</a>
+</div>
+
+{% endblock %}
